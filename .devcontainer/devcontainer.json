@@ -1,0 +1,17 @@
+{
+  "name": "leetcode-1-rust",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml"
+      ]
+    }
+  },
+  "postCreateCommand": "rustup component add rustfmt clippy",
+  "workspaceFolder": "/workspace"
+}
