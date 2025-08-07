@@ -10,5 +10,5 @@ fn main() {
     let target = 26;
 
     let result = Solution::two_sum(nums, target);
-    println!("result = {:#?}", result);
+    println!("result = {result:#?}");
 }
