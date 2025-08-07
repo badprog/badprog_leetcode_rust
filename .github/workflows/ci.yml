@@ -1,5 +1,8 @@
 name: CI Pipeline
 
+env:
+  IMAGE_NAME: badprog_leetcode_rust_all
+
 on:
   push:
     branches:
@@ -24,16 +27,16 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build Docker image
-        run: docker build -t badprog-leetcode-all-rust .
+        run: docker build -t ${{ env.IMAGE_NAME }} -f .devcontainer/Dockerfile .
 
       - name: Run linter (Clippy)
-        run: docker run --rm badprog-leetcode-all-rust cargo clippy -- -D warnings
+        run: docker run --rm ${{ env.IMAGE_NAME }} cargo clippy -- -D warnings
 
       - name: Check code formatting
-        run: docker run --rm badprog-leetcode-all-rust cargo fmt --check
+        run: docker run --rm ${{ env.IMAGE_NAME }} cargo fmt --check
 
       - name: Run tests in container
-        run: docker run --rm badprog-leetcode-all-rust cargo test --workspace
+        run: docker run --rm ${{ env.IMAGE_NAME }} cargo test --workspace
 
   push-docker:
     needs: build-and-test
