@@ -1,0 +1,9 @@
+[package]
+name = "p_1_two_sum"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "p_1_two_sum"
+
+[dependencies]

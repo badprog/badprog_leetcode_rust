@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "p_1_two_sum",
+    # "p_2"
+]
+resolver = "3"
