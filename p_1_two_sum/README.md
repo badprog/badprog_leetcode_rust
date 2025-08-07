@@ -1,8 +1,8 @@
-# badprog-leetcode-1-rust-two-sum
+# badprog_p1_two_sum
 
-https://leetcode.com/problems/two-sum/
+🔗 https://leetcode.com/problems/two-sum/
 
-1. Two Sum
+## Leetcode - 1 - Two Sum
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
