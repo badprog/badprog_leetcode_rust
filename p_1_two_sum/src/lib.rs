@@ -15,11 +15,8 @@ impl Solution {
             // println!("{} = {} + {}", target, element, "x");
             // println!("So x = {}", to_find);
 
-            match hash_map.get(&to_find) {
-                Some(&get_it) => {
-                    return vec![get_it, index as i32];
-                }
-                None => (),
+            if let Some(&get_it) = hash_map.get(&to_find) {
+                return vec![get_it, index as i32];
             };
 
             // println!("");
