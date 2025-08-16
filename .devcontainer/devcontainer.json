@@ -6,12 +6,13 @@
   },
   "customizations": {
     "vscode": {
-      "extensions": [
-        "rust-lang.rust-analyzer",
-        "tamasfe.even-better-toml"
-      ]
+      "extensions": ["rust-lang.rust-analyzer", "tamasfe.even-better-toml"]
     }
   },
-  "postCreateCommand": "rustup component add rustfmt clippy",
+  "runArgs": ["--rm"],
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
+  // "postCreateCommand": "rustup component add rustfmt clippy",
   "workspaceFolder": "/workspace"
 }

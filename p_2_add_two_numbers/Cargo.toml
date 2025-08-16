@@ -1,0 +1,9 @@
+[package]
+name = "p_2_add_two_numbers"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "p_2_add_two_numbers"
+
+[dependencies]
