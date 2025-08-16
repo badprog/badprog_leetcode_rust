@@ -1,3 +1,5 @@
+// https://github.com/badprog/badprog_leetcode_rust
+
 // ============================================================================
 // use
 use p_1_two_sum::Solution;
