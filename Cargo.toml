@@ -1,6 +1,6 @@
 [workspace]
 members = [
     "p_1_two_sum",
-    # "p_2"
+    "p_2_add_two_numbers"
 ]
 resolver = "3"
