@@ -1,11 +1,13 @@
 # Base image
-FROM rust:1.88.0
+FROM rust:1.89.0
+# FROM mcr.microsoft.com/devcontainers/rust:1
 
 # Run
 RUN apt-get update && apt-get install -y \
     git \
     tree \
     nano \
+    jq \
     && rm -rf /var/lib/apt/lists/*
 
 # Where to work
