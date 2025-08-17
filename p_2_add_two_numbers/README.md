@@ -1,4 +1,4 @@
-# badprog_p1_two_sum
+# badprog_p_2_add_two_numbers
 
 🔗 https://leetcode.com/problems/add-two-numbers/description/
 
