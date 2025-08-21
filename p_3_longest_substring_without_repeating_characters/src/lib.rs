@@ -13,10 +13,10 @@ impl Solution {
         let mut start = 0;
 
         for (index, element) in s.chars().enumerate() {
-            if let Some(&position) = hash_map.get(&element) {
-                if position >= start {
-                    start = position + 1;
-                }
+            if let Some(&position) = hash_map.get(&element)
+                && position >= start
+            {
+                start = position + 1;
             }
             hash_map.insert(element, index);
             max_length = max_length.max((index - start + 1) as i32);
