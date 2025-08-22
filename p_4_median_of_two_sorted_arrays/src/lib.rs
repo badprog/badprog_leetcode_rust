@@ -1,5 +1,7 @@
 // https://github.com/badprog/badprog_leetcode_rust
 
+use std::ops::Div;
+
 pub struct Solution;
 
 // =========================================================================
@@ -7,7 +9,7 @@ pub struct Solution;
 impl Solution {
     // =========================================================================
     //
-    fn check_if_empty(nums1: &Vec<i32>, nums2: &Vec<i32>) -> Option<f64> {
+    fn check_if_empty(nums1: &[i32], nums2: &[i32]) -> Option<f64> {
         // =========================================================================
         //
         fn median_of_single_array(arr: &[i32]) -> f64 {
@@ -55,7 +57,7 @@ impl Solution {
 
         while low <= high {
             let part_x = (low + high) / 2; // Example nums1[1,4,6] -> (0 + 3) /2
-            let part_y = (n1 + n2 + 1) / 2 - part_x; // Example nums2[2,3,4,7,8,9] -> (3 + 6 + 1) / 2
+            let part_y = (n1 + n2 + 1).div(2) - part_x; // Example nums2[2,3,4,7,8,9] -> (3 + 6 + 1) / 2
 
             // =========================================================================
             // MIN and MAX are used in order to prevent crash when accessing a data out of bound.
@@ -63,12 +65,10 @@ impl Solution {
             fn get_boundary(arr: &[i32], index: usize, is_left: bool, max_len: usize) -> i32 {
                 if is_left {
                     if index == 0 { i32::MIN } else { arr[index - 1] }
+                } else if index == max_len {
+                    i32::MAX
                 } else {
-                    if index == max_len {
-                        i32::MAX
-                    } else {
-                        arr[index]
-                    }
+                    arr[index]
                 }
             }
 
@@ -115,7 +115,7 @@ impl Solution {
         let index = array_len / 2;
         if modulo == 0 {
             if array_len == 2 {
-                let number_1 = *array_sorted.get(0).unwrap() as f64;
+                let number_1 = *array_sorted.first().unwrap() as f64;
                 let number_2 = *array_sorted.get(1).unwrap() as f64;
 
                 result = (number_1 + number_2) / 2.0;
