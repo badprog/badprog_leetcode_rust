@@ -3,5 +3,6 @@ members = [
     "p_1_two_sum",
     "p_2_add_two_numbers",
     "p_3_longest_substring_without_repeating_characters",
+    "p_4_median_of_two_sorted_arrays",
 ]
 resolver = "3"
