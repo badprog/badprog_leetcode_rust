@@ -1,0 +1,9 @@
+[package]
+name = "p_4_median_of_two_sorted_arrays"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "p_4_median_of_two_sorted_arrays"
+
+[dependencies]
