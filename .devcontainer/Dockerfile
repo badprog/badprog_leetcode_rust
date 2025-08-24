@@ -12,9 +12,27 @@ RUN apt-get update && apt-get install -y \
 
 # Where to work
 WORKDIR /workspace
+# Needed to get $WORKDIR
+ENV WORKDIR=/workspace
 
-# Copy
-COPY . .
+# Dealing with sub-projects: p_*
+# Copying everything in /tmp/context then only the sub-projects in $WORKDIR.
+# Not possible with the COPY instruction.
+COPY . /tmp/context/
+RUN ls -la /tmp/context > $WORKDIR/context.txt
+RUN cp -r /tmp/context/p_* $WORKDIR
+RUN rm -fr /tmp/context
+
+#
+COPY .devcontainer/ .devcontainer/
+COPY .github/ .github/
+COPY .gitattributes .
+COPY .gitignore .
+COPY Cargo.toml .
+COPY LICENSE .
+COPY README.md .
+COPY run_me.sh .
+
 
 # Rust stuff
 RUN rustup component add rustfmt clippy
