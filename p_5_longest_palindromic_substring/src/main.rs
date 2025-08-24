@@ -11,7 +11,7 @@ pub fn main() {
     let result = Solution::longest_palindrome(string_to_analyze);
 
     // println!("string_to_analyze = {}", string_to_analyze);
-    println!("");
+    println!();
     println!("===========================");
     println!("result palindrom = {}", result);
     println!("result size = {}", result.len());

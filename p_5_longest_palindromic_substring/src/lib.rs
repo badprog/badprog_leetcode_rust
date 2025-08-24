@@ -39,7 +39,7 @@ impl Solution {
 
             //
             while i + palindrom[i] + 1 < str_len
-                && i >= palindrom[i] + 1
+                && i > palindrom[i]
                 && str_to_analyze.chars().nth(i + palindrom[i] + 1)
                     == str_to_analyze.chars().nth(i - palindrom[i] - 1)
             {
@@ -69,16 +69,16 @@ impl Solution {
     //
     pub fn longest_palindrome2(s: String) -> String {
         let mut str_tmp = "".to_string();
-        let mut index_tmp = 0;
+        // let mut index_tmp = 0;
         let mut max_length = 0;
         let string_default = &s;
         let mut string_to_return = "".to_string();
 
         // println!("String default = {}", &string_default);
 
-        let mut size_string = s.len();
+        let size_string = s.len();
         let mut counter = 0;
-        let mut idx = 0;
+        // let idx = 0;
         let mut max_of_max = 0;
 
         //
@@ -88,16 +88,17 @@ impl Solution {
             //     counter
             // );
             str_tmp.clear();
-            index_tmp = 0;
+            // index_tmp = 0;
 
             //
-            for (index, element) in string_default.chars().skip(counter).enumerate() {
+            for element in string_default.chars().skip(counter) {
                 //
                 // println!("");
                 // println!("index: {}, element: {}", index, element);
 
                 // tmp
-                str_tmp.insert(index_tmp, element);
+                // str_tmp.insert(index_tmp, element);
+                str_tmp.push(element);
                 // println!("str_tmp = {}", str_tmp);
                 let str_rev: String = str_tmp.chars().rev().collect();
                 // println!("str_rev = {}", str_rev);
@@ -120,7 +121,7 @@ impl Solution {
                     }
                 }
 
-                index_tmp += 1;
+                // index_tmp += 1;
 
                 //
             } // END - for
