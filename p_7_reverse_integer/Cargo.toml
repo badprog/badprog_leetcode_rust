@@ -1,0 +1,9 @@
+[package]
+name = "p_7_reverse_integer"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "p_7_reverse_integer"
+
+[dependencies]

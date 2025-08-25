@@ -6,5 +6,6 @@ members = [
     "p_4_median_of_two_sorted_arrays",
     "p_5_longest_palindromic_substring",
     "p_6_zigzag_conversion",
+    "p_7_reverse_integer",
 ]
 resolver = "3"
